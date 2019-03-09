@@ -1,4 +1,4 @@
-# Maintainer requirements for `tensorflow/addons`
+# Sustainability requirements for `tensorflow/addons`
 
 | Status        | Proposed       |
 :-------------- |:---------------------------------------------------- |
