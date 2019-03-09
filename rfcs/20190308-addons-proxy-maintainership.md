@@ -50,7 +50,7 @@ Proxy maintainers may also co-maintain existing TensorFlow Addons packages. If a
 
 #### Readding a removed package
 
-If a potential maintainer wishes to readd a package that has been removed from TensorFlow Addons, they must explicitly note that on their submission. The procedure for readding a package combines the requirements for adding a new package and taking over an unmaintained package. Thus, a potential maintainer would be required to:
+If a potential maintainer wishes to readd a package that was deprecated as part of `tf.contrib`, they must explicitly note that on their submission. The procedure for readding a package combines the requirements for adding a new package and taking over an unmaintained package. Thus, a potential maintainer would be required to:
 
 * Submit a good quality build (either a new one or based on the old one).
 * Fix the issues that prompted the package removal in the first place.
