@@ -10,7 +10,7 @@
 
 TensorFlow Addons is a repository of contributions that conform to well-established API patterns, but implement new functionality not available in core TensorFlow. For TensorFlow Addons to support [code that is moved from `tf.contrib to addons](https://github.com/tensorflow/community/blob/ef626896f30130dfc3b5e75126c94624b689a943/rfcs/20181214-move-to-addons.md#code-to-be-moved-from-tfcontrib-to-addons), as well as new operations, requirements for maintaining and retiring those modules must be defined and enforced.
 
-This document details requirements and responsibilities for owning a module that is included in TensorFlow Addons.
+This document details requirements and responsibilities for owning a module that is included in TensorFlow Addons, as well as the sustainability and maintainability of Addons itself.
 
 ## Motivation
 
