@@ -63,6 +63,8 @@ If a potential maintainer wishes to readd a package that was deprecated as part 
 
 Proxy maintainers would be expected to handle bugs against packages they own themselves. This includes resolving them once their fix is merged by a proxy maintainer, or rejecting them based on their own judgment. Proxy maintainers must repond to issues within 48 hours, and resolve them within 30 days in order for their packages to remain in TensorFlow Addons.
 
+If at any time a proxy maintainer fails to meet the requirements detailed above, they will lose their status as package maintainer and the status of the package will be reviewed at the next release cycle.
+
 ### Retiring from proxy maintainership
 
 If a proxy maintainer decides that they no longer wish to maintain one or more of their packages, they must commit to the following procedure:
