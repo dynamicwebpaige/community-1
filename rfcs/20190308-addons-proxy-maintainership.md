@@ -20,15 +20,22 @@ In this RFC, we are soliciting discussion regarding Addons module maintainership
 
 ### Privileges and responsibitilies of proxied maintainers
 
-Proxy maintainers may add new packages to `tensorflow/addons`, provided they are willing to maintain them afterwards. In order to do so, 
+Proxy maintainers may add new packages to `tensorflow/addons`, provided they are willing to maintain them. In order to do so, they must follow the guidelines listed below for [modules](https://docs.python.org/3/tutorial/modules.html#modules), [packages](https://docs.python.org/3/tutorial/modules.html#packages), and [functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions). To date, the [`tensorflow/addons` repository accepts](https://github.com/tensorflow/addons#standardized-apis) contributions of:
+
+1. Layers
+2. Optimizers
+3. Losses
+4. Custom Ops
+
+Migrating a large scale library is out of scope for `tensorflow/addons`. If your project has a large user base and extensive functionality, we suggest migrating it to its own repo.
 
 ### How to become a proxied maintainer
 
 #### Adding a new package
 
-The SIG Addons core team will review the submitted files (_TBD: tests, contact information, etc._) and help bring them to the top quality. Once the package is ready, it will be merged and the relevant bugs will be closed (if there are any).
+The SIG Addons core team will review the submitted files (for details on coding style, requirements, and testing, please refer to [`CONTRIBUTING.md`](https://github.com/tensorflow/addons/blob/master/CONTRIBUTING.md)) and help bring the contribution to an acceptable quality. Once the package is ready, it will be merged and the relevant bugs will be closed (if there are any).
 
-Please note that we reserve the right to reject new packages, especially if they would otherwise qualify for removal per our quality standards. Example reasons for rejection include:
+Please note that the Addons team reserves the right to reject new packages, especially if they would otherwise qualify for removal per its quality standards. Example reasons for rejection include:
 
 * Having known major bugs or security issues.
 * Duplicating functionality in the TensorFlow core API.
