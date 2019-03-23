@@ -67,11 +67,11 @@ To date, the `tensorflow/addons` [subpackages](https://github.com/tensorflow/add
 
 The easiest way to become a proxy maintainer is to respond to our monthly 
 "request for help" emails. Subpackage maintainership will only be 
-granted after substantial contribution has been made in order to keep the 
-repository orderly. Contributions can come in the form of isssue closings, bug 
-fixes, new code, or optimizing existing code. Submodule maintainership can be 
-granted with a lower barrier for entry as this will not include write 
-permissions to the repo.
+granted after substantial contribution has been made in order to limit the 
+number of users with write perission. Contributions can come in the form of 
+issue closings, bug fixes, new code, or optimizing existing code. Submodule 
+maintainership can be granted with a lower barrier for entry as this will not 
+include write permissions to the repo.
 
 Additionally, Proxy maintainers are encouraged co-maintain existing TensorFlow 
 Addons subpackages/submodules. If a potential maintainer chooses to do so, 
@@ -99,10 +99,10 @@ they own themselves. This includes resolving them once their fix is
 merged by a proxy maintainer.
 
 If a proxy maintainer fails to provide sufficient support for their
-subpackage they can be designated as non-active and that will be taken into 
+subpackage they can be designated as inactive and that will be taken into 
 account during the periodic review of their subpackage/submodule.
 
-### Retiring from proxy maintainership
+### Retiring from Proxy Maintainership
 
 If a proxy maintainer decides that they no longer wish to maintain one 
 or more of their subpackages, they must commit to the following procedure:
@@ -171,3 +171,4 @@ submission. A potential maintainer would be required to:
 * Should we limit the number of write permissions per subpackage?
 * What channels of communication should be available for SIG Addons Proxy Maintainers?
 * How will the periodic review affect production users of TF-Addons?
+* How often should the periodic reviews be conducted?
