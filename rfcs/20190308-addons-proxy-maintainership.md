@@ -49,6 +49,7 @@ community support.
 ### Subpackages 
 
 To date, the `tensorflow/addons` [subpackages](https://github.com/tensorflow/addons#maintainers) include:
+
 | Subpackage    | Maintainers  | Contact Info                        |
 |:----------------------- |:----------- |:----------------------------|
 | [tfa.activations](tensorflow_addons/activations/README.md) | SIG-Addons | addons@tensorflow.org    |
