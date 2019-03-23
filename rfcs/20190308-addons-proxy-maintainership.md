@@ -1,41 +1,149 @@
-# Sustainability requirements for `tensorflow/addons`
+# Sustainability of TensorFlow Addons
 
 | Status        | Proposed       |
 :-------------- |:---------------------------------------------------- |
 | **Author(s)** | Paige Bailey (webpaige@google.com), Sean Morgan (seanmorgan@outlook.com) |
 | **Sponsor**   | Karmel Allison (karmel@google.com)                 |
-| **Updated**   | 2019-03-08                                           |
+| **Updated**   | 2019-03-23                                         |
 
 ## Objective
+ 
+[TensorFlow Addons](https://github.com/tensorflow/addons) is a repository of 
+contributions that conform to well-established API patterns, but implement new 
+functionality not available in core TensorFlow. For TensorFlow Addons to 
+support [code that is moved from `tf.contrib to addons](https://github.com/tensorflow/community/blob/ef626896f30130dfc3b5e75126c94624b689a943/rfcs/20181214-move-to-addons.md#code-to-be-moved-from-tfcontrib-to-addons),
+as well as new functionality, requirements for maintaining and retiring those 
+submodules must be defined and enforced.
 
-TensorFlow Addons is a repository of contributions that conform to well-established API patterns, but implement new functionality not available in core TensorFlow. For TensorFlow Addons to support [code that is moved from `tf.contrib to addons](https://github.com/tensorflow/community/blob/ef626896f30130dfc3b5e75126c94624b689a943/rfcs/20181214-move-to-addons.md#code-to-be-moved-from-tfcontrib-to-addons), as well as new operations, requirements for maintaining and retiring those modules must be defined and enforced.
-
-This document details requirements and responsibilities for owning a module that is included in TensorFlow Addons, as well as the sustainability and maintainability of Addons itself.
+This document details requirements and responsibilities for owning a 
+subpackage/submodule that is included in TensorFlow Addons, as well as the 
+periodic review process for all components of Addons.
 
 ## Motivation
 
-In this RFC, we are soliciting discussion regarding Addons module maintainership. This RFC discussion will help the SIG Addons team determine appropriate roles and responsibilities for proxy maintainers.
+In this RFC, we are soliciting discussion regarding Addons maintainership 
+and periodic review. This RFC discussion will help the SIG Addons team 
+determine appropriate roles and responsibilities for proxy maintainers.
 
 ## Design Proposal 
 
-### Privileges and responsibitilies of proxied maintainers
+### Repository Structure
 
-Proxy maintainers may add new packages to `tensorflow/addons`, provided they are willing to maintain them. In order to do so, they must follow the guidelines listed below for [modules](https://docs.python.org/3/tutorial/modules.html#modules), [packages](https://docs.python.org/3/tutorial/modules.html#packages), and [functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions). To date, the [`tensorflow/addons` repository accepts](https://github.com/tensorflow/addons#standardized-apis) contributions of:
+TensorFlow Addons is structured in a into a heirarchy of subpackages 
+and submodules as described in the [python docs](https://docs.python.org/3/tutorial/modules.html#packages).
 
-1. Layers
-2. Optimizers
-3. Losses
-4. Custom Ops
+A newly proposed subpackage will be required to have at least one active proxy 
+maintainer or organization; and the inclusion must be 
+[discussed with the community at large](https://github.com/tensorflow/addons/issues/58) 
+to see if its matches the addons paradigm. A newly proposed submodule or code 
+addition is required to get approval from the governing subpackage maintainers. 
+In the event that a contributor is not willing to maintain a piece of code, 
+it'll be up to the subpackage owners to decide if they're willing to maintain 
+the code going forward & if it should be accepted.
 
-Migrating a large scale library is out of scope for `tensorflow/addons`. If your project has a large user base and extensive functionality, we suggest migrating it to its own repo.
+Ultimately TensorFlow Addons is trying to build as inclusive of a community as 
+possible. More than one maintainer is encouraged for subpackages and submodules. 
+We'll send out monthly emails to our [Google Group](https://groups.google.com/a/tensorflow.org/forum/#!forum/addons) detailing which subpackages/submodules are light on maintainers and encourage 
+community support.
 
-### How to become a proxied maintainer
+### Subpackages 
 
-#### Adding a new package
+To date, the `tensorflow/addons` [subpackages](https://github.com/tensorflow/addons#maintainers) include:
+| Subpackage    | Maintainers  | Contact Info                        |
+|:----------------------- |:----------- |:----------------------------|
+| [tfa.activations](tensorflow_addons/activations/README.md) | SIG-Addons | addons@tensorflow.org    |
+| [tfa.image](tensorflow_addons/image/README.md) |  |                                   |
+| [tfa.layers](tensorflow_addons/layers/README.md) | SIG-Addons |     addons@tensorflow.org |
+| [tfa.losses](tensorflow_addons/losses/README.md) | SIG-Addons |     addons@tensorflow.org |
+| [tfa.optimizers](tensorflow_addons/optimizers/README.md) | SIG-Addons | addons@tensorflow.org |
+| [tfa.seq2seq](tensorflow_addons/seq2seq/README.md) | Google | @qlzh727 | 
+| [tfa.text](tensorflow_addons/text/README.md) |  |  |
 
-The SIG Addons core team will review the submitted files (for details on coding style, requirements, and testing, please refer to [`CONTRIBUTING.md`](https://github.com/tensorflow/addons/blob/master/CONTRIBUTING.md)) and help bring the contribution to an acceptable quality. Once the package is ready, it will be merged and the relevant bugs will be closed (if there are any).
 
-Please note that the Addons team reserves the right to reject new packages, especially if they would otherwise qualify for removal per its quality standards. Example reasons for rejection include:
+## Maintainership 
+
+### How to Become a Proxied Maintainer
+
+The easiest way to become a proxy maintainer is to respond to our monthly 
+"request for help" emails. Subpackage maintainership will only be 
+granted after substantial contribution has been made in order to keep the 
+repository orderly. Contributions can come in the form of isssue closings, bug 
+fixes, new code, or optimizing existing code. Submodule maintainership can be 
+granted with a lower barrier for entry as this will not include write 
+permissions to the repo.
+
+Additionally, Proxy maintainers are encouraged co-maintain existing TensorFlow 
+Addons subpackages/submodules. If a potential maintainer chooses to do so, 
+there are a few things to consider first:
+
+* If the subpackage has an existing maintainer, the potential maintainer 
+must communicate with them first. The existing maintainer would need to 
+approve the co-maintainer role, and might give the potential maintainer 
+a specific task to do first.
+
+* If the subpackage has major bugs, the potential maintainer 
+can provide fixes and expedite their inclusion as a listed
+proxy maintainer.
+
+### Privileges and Responsibitilies of Proxied Maintainers
+
+Subpackage maintainers will be granted write access to the repo and will be 
+designated in the [CODEOWNERS](https://help.github.com/en/articles/about-code-owners) 
+file.
+
+### Resolving Bugs
+
+Proxy maintainers would be expected to handle bugs against subpackages 
+they own themselves. This includes resolving them once their fix is 
+merged by a proxy maintainer.
+
+If a proxy maintainer fails to provide sufficient support for their
+subpackage they can be designated as non-active and that will be taken into 
+account during the periodic review of their subpackage/submodule.
+
+### Retiring from proxy maintainership
+
+If a proxy maintainer decides that they no longer wish to maintain one 
+or more of their subpackages, they must commit to the following procedure:
+
+* Please send an email to addons@tensorflow.org and list all code that they are 
+no longer able to maintain. It is usually a good idea to shortly describe the 
+state of code, e.g. whether the packages have open bugs, whether they are hard 
+to maintain etc.
+
+* The proxy maintainer must remove themselves from the `CODEOWNERS.md` 
+file, with `<!--maintainer-needed-->` listed in the place of 
+maintainers. This will help other developers to find subpackages with no 
+maintainers.
+
+## Repository Growth and Review 
+### Periodic Review
+
+Given the nature of this repository, subpackages and submodules may become less 
+and less useful to the community as time goes on. In order to keep the 
+repository sustainable, we'll be performing bi-annual reviews of our code to 
+ensure everything still belongs within the repo. Contributing factors to this 
+review will be:
+
+1. Number of active maintainers
+2. Amount of OSS use
+3. Amount of issues or bugs attributed to the code
+
+Because we encourage TF-Addons to be used in production, we'll plan on a 
+graceful deprecation process, instead of a swift removal.
+
+### Adding a New Subpackage
+
+The SIG Addons core team will review the submitted files 
+(for details on coding style, requirements, and testing, please refer 
+to [`CONTRIBUTING.md`](https://github.com/tensorflow/addons/blob/master/CONTRIBUTING.md)) 
+and help bring the contribution to an acceptable quality. Once the 
+package is ready, it will be merged and the relevant bugs will be 
+closed (if there are any).
+
+Please note that the Addons team reserves the right to reject new 
+subpackages, especially if they would otherwise qualify for removal per 
+its quality standards. Example reasons for rejection include:
 
 * Having known major bugs or security issues.
 * Duplicating functionality in the TensorFlow core API.
@@ -43,54 +151,22 @@ Please note that the Addons team reserves the right to reject new packages, espe
 * Failling to obtain an appropriate code review.
 * Having no general usefulness for TensorFlow users.
 
-#### Taking over an existing package
+### Moving a Subpackage from tf.contrib
 
-Proxy maintainers may also co-maintain existing TensorFlow Addons packages. If a potential maintainer chooses to do so, there are a few things to consider first:
+If a potential maintainer wishes to migrate a subpackage that was deprecated 
+as part of `tf.contrib`, they must explicitly note that on their 
+submission. A potential maintainer would be required to:
 
-* If the package has an existing maintainer, the potential maintainer must community with them first. The existing maintainer would need to approve the co-maintainer role, and might give the potential maintainer a specific task to do first.
+* Demonstrate that the code is useful to the community at large.
+* Modify the code to utilize TF 2.x functionality
 
-* If the package has major bugs (especially if the quality of bugs would recommend it for removal), the potential maintainer will need to provide fixes for at least some of them before their request is approved. 
-
-* If you do not have a few prior contributions as a proxied maintainer and neither of the above applied, you will need to provide some meaningful update to the ebuild. This usually involves bump to a newer EAPI, QA fixes, bug fixes — anything that could prove that you can write ebuilds. When in doubt, contact us first and we'll try to find you something to do.
-
-* Once you've established what needs to be done, please submit a commit adding yourself to metadata.xml as a (co-)maintainer, followed by the specific commits required to fix the package and/or prove your skills.
-
-#### Readding a removed package
-
-If a potential maintainer wishes to readd a package that was deprecated as part of `tf.contrib`, they must explicitly note that on their submission. The procedure for readding a package combines the requirements for adding a new package and taking over an unmaintained package. Thus, a potential maintainer would be required to:
-
-* Submit a good quality build (either a new one or based on the old one).
-* Fix the issues that prompted the package removal in the first place.
-
-### Being a proxied maintainer
-
-#### Testing
-
-#### Resolving bugs
-
-Proxy maintainers would be expected to handle bugs against packages they own themselves. This includes resolving them once their fix is merged by a proxy maintainer, or rejecting them based on their own judgment. Proxy maintainers must repond to issues within 48 hours, and resolve them within 30 days in order for their packages to remain in TensorFlow Addons.
-
-If at any time a proxy maintainer fails to meet the requirements detailed above, they will lose their status as package maintainer and the status of the package will be reviewed at the next release cycle.
-
-### Retiring from proxy maintainership
-
-If a proxy maintainer decides that they no longer wish to maintain one or more of their packages, they must commit to the following procedure:
-
-* If the proxy maintainer is the last maintainer of some of the packages (not counting proxy-maint project), please send an email to addons@tensorflow.org mailing list titled 'Packages up for grabs: …' and listing all packages that they are no longer able to maintain. It is usually a good idea to shortly describe the state of packages, i.e. whether the packages have open bugs, whether they are hard to maintain etc.
-
-* The proxy maintainer must remove themselves from the `CODEOWNERS.md` file, with `<!--maintainer-needed-->` listed in the place of maintainers. This will help other developers to grep packages with no maintainers.
-
-**Notes:**
+**Useful Links:**
 * [SIG Addons RFC](https://github.com/tensorflow/community/blob/ef626896f30130dfc3b5e75126c94624b689a943/rfcs/20181214-move-to-addons.md).
 * [SIG Addons Charter](https://github.com/tensorflow/community/blob/master/sigs/addons/CHARTER.md).
 
 ## Questions and Discussion Topics
 
-* What is an optimal time to respond for issues posted to a module?
-* How quickly must issues be resolved by proxy maintainers?
-* What permissions should proxy maintainers have on the SIG Addons repo?
+* What is a fair way to define "sufficient support" for a subpackage/submodule.
+* Should we limit the number of write permissions per subpackage?
 * What channels of communication should be available for SIG Addons Proxy Maintainers?
-
-## After Request Notes
-* Now that the review period has ended, please post all suggested
- additions/removals directly to the tensorflow/addons [issues page](https://github.com/tensorflow/addons/issues)
+* How will the periodic review affect production users of TF-Addons?
