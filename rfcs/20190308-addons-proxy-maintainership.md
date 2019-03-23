@@ -52,13 +52,13 @@ To date, the `tensorflow/addons` [subpackages](https://github.com/tensorflow/add
 
 | Subpackage    | Maintainers  | Contact Info                        |
 |:----------------------- |:----------- |:----------------------------|
-| [tfa.activations](tensorflow_addons/activations/README.md) | SIG-Addons | addons@tensorflow.org    |
-| [tfa.image](tensorflow_addons/image/README.md) |  |                                   |
-| [tfa.layers](tensorflow_addons/layers/README.md) | SIG-Addons |     addons@tensorflow.org |
-| [tfa.losses](tensorflow_addons/losses/README.md) | SIG-Addons |     addons@tensorflow.org |
-| [tfa.optimizers](tensorflow_addons/optimizers/README.md) | SIG-Addons | addons@tensorflow.org |
-| [tfa.seq2seq](tensorflow_addons/seq2seq/README.md) | Google | @qlzh727 | 
-| [tfa.text](tensorflow_addons/text/README.md) |  |  |
+| tfa.activations | SIG-Addons | addons@tensorflow.org    |
+| tfa.image |  |                                   |
+| tfa.layers | SIG-Addons |     addons@tensorflow.org |
+| tfa.losses | SIG-Addons |     addons@tensorflow.org |
+| tfa.optimizers | SIG-Addons | addons@tensorflow.org |
+| tfa.seq2seq | Google | @qlzh727 | 
+| tfa.text |  |  |
 
 
 ## Maintainership 
