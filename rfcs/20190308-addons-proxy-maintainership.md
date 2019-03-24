@@ -2,7 +2,7 @@
 
 | Status        | Proposed       |
 :-------------- |:---------------------------------------------------- |
-| **Author(s)** | Paige Bailey (webpaige@google.com), Sean Morgan (seanmorgan@outlook.com) |
+| **Author(s)** | Paige Bailey (webpaige@google.com), Sean Morgan (seanmorgan@outlook.com), Yan Facai (facai.yan@gmail.com) |
 | **Sponsor**   | Karmel Allison (karmel@google.com)                 |
 | **Updated**   | 2019-03-23                                         |
 
