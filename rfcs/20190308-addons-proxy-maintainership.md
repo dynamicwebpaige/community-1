@@ -57,7 +57,7 @@ To date, the `tensorflow/addons` [subpackages](https://github.com/tensorflow/add
 | tfa.layers | SIG-Addons |     addons@tensorflow.org |
 | tfa.losses | SIG-Addons |     addons@tensorflow.org |
 | tfa.optimizers | SIG-Addons | addons@tensorflow.org |
-| tfa.seq2seq | Google | @qlzh727 | 
+| tfa.seq2seq | Google | [@qlzh727](https://github.com/qlzh727) | 
 | tfa.text |  |  |
 
 
