@@ -11,7 +11,7 @@
 [TensorFlow Addons](https://github.com/tensorflow/addons) is a repository of 
 contributions that conform to well-established API patterns, but implement new 
 functionality not available in core TensorFlow. For TensorFlow Addons to 
-support [code that is moved from `tf.contrib to addons](https://github.com/tensorflow/community/blob/ef626896f30130dfc3b5e75126c94624b689a943/rfcs/20181214-move-to-addons.md#code-to-be-moved-from-tfcontrib-to-addons),
+support [code that is moved from `tf.contrib` to `addons`](https://github.com/tensorflow/community/blob/ef626896f30130dfc3b5e75126c94624b689a943/rfcs/20181214-move-to-addons.md#code-to-be-moved-from-tfcontrib-to-addons),
 as well as new functionality, requirements for maintaining and retiring those 
 submodules must be defined and enforced.
 
@@ -37,13 +37,13 @@ maintainer or organization; and the inclusion must be
 [discussed with the community at large](https://github.com/tensorflow/addons/issues/58) 
 to see if its matches the addons paradigm. A newly proposed submodule or code 
 addition is required to get approval from the governing subpackage maintainers. 
-In the event that a contributor is not willing to maintain a piece of code, 
-it'll be up to the subpackage owners to decide if they're willing to maintain 
-the code going forward & if it should be accepted.
+If a contributor is not willing to maintain a piece of code, 
+subpackage owners will decide if they are willing to maintain 
+the code going forward and if it should be accepted into future addons releases.
 
-Ultimately TensorFlow Addons is trying to build as inclusive of a community as 
+TensorFlow Addons would like to build as inclusive of a community as 
 possible. More than one maintainer is encouraged for subpackages and submodules. 
-We'll send out monthly emails to our [Google Group](https://groups.google.com/a/tensorflow.org/forum/#!forum/addons) detailing which subpackages/submodules are light on maintainers and encourage 
+The Addons core team will send out monthly emails to the addons [Google Group](https://groups.google.com/a/tensorflow.org/forum/#!forum/addons) detailing which subpackages/submodules are light on maintainers and encouraging 
 community support.
 
 ### Subpackages 
@@ -73,14 +73,14 @@ issue closings, bug fixes, new code, or optimizing existing code. Submodule
 maintainership can be granted with a lower barrier for entry as this will not 
 include write permissions to the repo.
 
-Additionally, Proxy maintainers are encouraged co-maintain existing TensorFlow 
+Additionally, Proxy maintainers are encouraged to co-maintain existing TensorFlow 
 Addons subpackages/submodules. If a potential maintainer chooses to do so, 
 there are a few things to consider first:
 
 * If the subpackage has an existing maintainer, the potential maintainer 
 must communicate with them first. The existing maintainer would need to 
 approve the co-maintainer role, and might give the potential maintainer 
-a specific task to do first.
+a specific task to complete before granting co-maintainership.
 
 * If the subpackage has major bugs, the potential maintainer 
 can provide fixes and expedite their inclusion as a listed
@@ -94,23 +94,23 @@ file.
 
 ### Resolving Bugs
 
-Proxy maintainers would be expected to handle bugs against subpackages 
-they own themselves. This includes resolving them once their fix is 
+Proxy maintainers are expected to handle bugs against the subpackages 
+they own. This includes resolving those issues once their fix is 
 merged by a proxy maintainer.
 
 If a proxy maintainer fails to provide sufficient support for their
-subpackage they can be designated as inactive and that will be taken into 
+subpackage they will be designated as inactive. This status will be taken into 
 account during the periodic review of their subpackage/submodule.
 
 ### Retiring from Proxy Maintainership
 
 If a proxy maintainer decides that they no longer wish to maintain one 
-or more of their subpackages, they must commit to the following procedure:
+or more of their subpackages, they **must** commit to the following procedure:
 
-* Please send an email to addons@tensorflow.org and list all code that they are 
+* Send an email to addons@tensorflow.org and list all code that they are 
 no longer able to maintain. It is usually a good idea to shortly describe the 
-state of code, e.g. whether the packages have open bugs, whether they are hard 
-to maintain etc.
+state of code, e.g. whether the packages have open bugs, whether they are difficult 
+to maintain, etc.
 
 * The proxy maintainer must remove themselves from the `CODEOWNERS.md` 
 file, with `<!--maintainer-needed-->` listed in the place of 
